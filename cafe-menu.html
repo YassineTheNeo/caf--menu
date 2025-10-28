@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EUPHORIA Café Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f0e8 url('bg1.PNG') center/cover no-repeat;
+            color: #3e2723;
+            padding: 20px;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .menu-board {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .panel {
+            background: #ddad9c;
+            border-radius: 15px;
+            width: 300px;
+            min-height: 580px; /* Consistent height */
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 60px;
+            background: #4d2517;
+            border-radius: 15px 15px 0 0;
+            clip-path: ellipse(80% 100% at 50% 0%);
+        }
+
+        .panel-title {
+            position: relative;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #af5639;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            z-index: 2;
+        }
+
+        .panel-title span {
+            background: #d7ccc8;
+            color: #5d4037;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-size: 24px;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-bottom: 80px; /* Space for image */
+            z-index: 2;
+            position: relative;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dotted #fff;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #3E2723;
+        }
+
+        .coffee-beans {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: url('https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
+            border-radius: 0 0 15px 15px;
+            z-index: 1;
+        }
+
+        .coffee-beans::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(77, 37, 23, 0.4);
+            border-radius: 0 0 15px 15px;
+        }
+
+        @media (max-width: 768px) {
+            .panel {
+                width: 100%;
+                max-width: 350px;
+                min-height: auto;
+            }
+            .content-wrapper {
+                padding-bottom: 90px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="menu-board">
+
+    <!-- Panel 1 -->
+    <div class="panel">
+        <div class="panel-title">EUPHORIA<span>tarifs</span></div>
+        <div class="content-wrapper">
+            <div class="menu-item"><span>• Café Express</span><span class="price">1.700</span></div>
+            <div class="menu-item"><span>• Café Capucin</span><span class="price">1.800</span></div>
+            <div class="menu-item"><span>• Café Direct</span><span class="price">2.000</span></div>
+            <div class="menu-item"><span>• Café Parfumé</span><span class="price">-</span></div>
+            <div class="menu-item"><span>• Capucin Nestle</span><span class="price">-</span></div>
+            <div class="menu-item"><span>• Café Lavazza</span><span class="price">-</span></div>
+            <div class="menu-item"><span>• Thé Normal</span><span class="price">1.200</span></div>
+            <div class="menu-item"><span>• Thé Menthe</span><span class="price">1.500</span></div>
+            <div class="menu-item"><span>• Thé Kakaouia</span><span class="price">-</span></div>
+            <div class="menu-item"><span>• Thé Amande</span><span class="price">-</span></div>
+            <div class="menu-item"><span>• Thé Fruits Secs</span><span class="price">-</span></div>
+        </div>
+        <div class="coffee-beans"></div>
+    </div>
+
+    <!-- Panel 2 -->
+    <div class="panel">
+        <div class="panel-title">EUPHORIA<span>tarifs</span></div>
+        <div class="content-wrapper">
+            <div class="menu-item"><span>• Granite Mini</span><span class="price">-</span></div>
+            <div class="menu-item"><span>• Granite Chops</span><span class="price">-</span></div>
+            <div class="menu-item"><span>• Jus d'Orange Mini</span><span class="price">1.500</span></div>
+            <div class="menu-item"><span>• Jus d'Orange Chops</span><span class="price">2.500</span></div>
+            <div class="menu-item"><span>• Jus Fraise</span><span class="price">-</span></div>
+            <div class="menu-item"><span>• Citronnade</span><span class="price">1.700</span></div>
+            <div class="menu-item"><span>• Lait de Poule</span><span class="price">3.000</span></div>
+            <div class="menu-item"><span>• Jwejem Spécial</span><span class="price">-</span></div>
+            <div class="menu-item"><span>• Jwejem Normal</span><span class="price">-</span></div>
+            <div class="menu-item"><span>• Yaourt Parfumé</span><span class="price">-</span></div>
+            <div class="menu-item"><span>• Yaourt Normal</span><span class="price">-</span></div>
+        </div>
+        <div class="coffee-beans"></div>
+    </div>
+
+    <!-- Panel 3 -->
+    <div class="panel">
+        <div class="panel-title">EUPHORIA<span>tarifs</span></div>
+        <div class="content-wrapper">
+            <div class="menu-item"><span>• Croissant</span><span class="price">1.500</span></div>
+            <div class="menu-item"><span>• Louzia</span><span class="price">1.500</span></div>
+            <div class="menu-item"><span>• Mille-feuille</span><span class="price">-</span></div>
+            <div class="menu-item"><span>• Délice</span><span class="price">-</span></div>
+            <div class="menu-item"><span>• Gâteau</span><span class="price">1.700</span></div>
+            <div class="menu-item"><span>• Pâté</span><span class="price">-</span></div>
+            <div class="menu-item"><span>• Soufflé</span><span class="price">-</span></div>
+            <div class="menu-item"><span>• Boga Menthe</span><span class="price">3.000</span></div>
+            <div class="menu-item"><span>• Boite Soda</span><span class="price">-</span></div>
+            <div class="menu-item"><span>• Boisson Soda</span><span class="price">2.500</span></div>
+            <div class="menu-item"><span>• Boite Énergétique</span><span class="price">-</span></div>
+        </div>
+        <div class="coffee-beans"></div>
+    </div>
+
+    <!-- Panel 4 (Short panel - now fixed!) -->
+    <div class="panel">
+        <div class="panel-title">EUPHORIA<span>tarifs</span></div>
+        <div class="content-wrapper">
+            <div class="menu-item"><span>• Eau 1,5 L</span><span class="price">1.700</span></div>
+            <div class="menu-item"><span>• Eau 1 L</span><span class="price">1.700</span></div>
+            <div class="menu-item"><span>• Eau 0,5 L</span><span class="price">1.000</span></div>
+        </div>
+        <div class="coffee-beans"></div>
+    </div>
+
+</div>
+
+</body>
+</html>

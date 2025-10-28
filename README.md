@@ -1,2 +1,2 @@
-# caf--menu
+# café-menu
 café-menu webpage
